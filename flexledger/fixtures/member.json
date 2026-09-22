@@ -1,0 +1,26 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Member",
+  "email": null,
+  "join_date": null,
+  "member_name": "hello",
+  "modified": "2026-09-22 15:18:42.667412",
+  "name": "5eallvmfr5",
+  "phone": null,
+  "status": null,
+  "user": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Member",
+  "email": null,
+  "join_date": "2026-09-22",
+  "member_name": "salamon",
+  "modified": "2026-09-22 15:26:29.489057",
+  "name": "MEM-2026-0001",
+  "phone": "+91-1234567890",
+  "status": "Active",
+  "user": null
+ }
+]

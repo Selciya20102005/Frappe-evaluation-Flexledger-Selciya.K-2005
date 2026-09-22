@@ -5,6 +5,13 @@ app_description = "flexledger app"
 app_email = "selciya.k2005@gmail.com"
 app_license = "mit"
 
+
+
+fixtures=["Role"]
+
+permission_query_conditions:{
+    "Class Session":"flexledger.api.permissions.class_session_permission"
+}
 # Apps
 # ------------------
 
