@@ -1,0 +1,41 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-09-23 16:10:30.502689",
+ "disable_prepared_report_automation": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "doctype_to_sync": [],
+ "filters": [
+  {
+   "default": "100",
+   "fieldname": "threshold",
+   "fieldtype": "Int",
+   "label": "Threshold",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-09-23 16:37:35.082640",
+ "modified_by": "Administrator",
+ "module": "flexledger",
+ "name": "Members Running Low",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select name as \"Name\", member as \"Member\", credits_remaining as \"Credits Reamining\", expiry_date as \"Expiry Date\", status as \"Status\" from `tabPackage Purchase` where status=\"Active\" and credits_remaining <= %(threshold)s;",
+ "ref_doctype": "Package Purchase",
+ "report_name": "Members Running Low",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "snapshot_report": 0,
+ "timeout": 0
+}

@@ -3,21 +3,9 @@
 
 frappe.ui.form.on("Class Session", {
 	refresh(frm) {
-        add_custom_button("Cancel Session",()=>{
-//             let dialog=new frappe.ui.Dialog({
-//                 title:"Cancellation Reason",
-//                 field:{
-// fieldname:"cancellation_reason",
-// label:"Cancellation Reason",
-// fieldtype:"Small Text",
-// redq:1
-//                 }
-                
-
-//             }
         
-//     )
-//     dialog.show()
+        frm.add_custom_button("Cancel Session",()=>{
+
 let d = new frappe.ui.Dialog({
     title: 'Cancellation Reason',
     fields: [
@@ -31,14 +19,64 @@ let d = new frappe.ui.Dialog({
     size: 'small', // small, large, extra-large 
     primary_action_label: 'Send',
     primary_action(values) {
-        frappe.db.set_value("Class Session",frm.doc.name,"status","Cancelled")
-        
+        frm.set_value({
+            "status":"Cancelled"
+        })
+        frm.refresh_field("status")
+        frappe.msgprint("Session Cancelled Successfully")
+       
     }
 });
 
 d.show();
 
         })
+        
 
+         frm.add_custom_button("Swap Trainer",()=>{
+frappe.prompt('Trainer Name',  'Enter Trainer Name', 'Submit').then(doc=>{
+     frappe.confirm('Are you sure you want to proceed?',
+    () => {
+        
+    }, () => {
+        
+    })
+
+})
+ 
+         },
+
+
+    )
+  
+frm.set_query('trainer', () => {
+    return {
+        filters: {
+            status: 'Active'
+        }
+    }
+})
+if(frm.doc.status){
+    const colors={
+        Scheduled:"orange",
+        Completed:"green",
+        Draft:"blue",
+        Cancelled:"red"
+    }
+    frm.dashboard.add_indicator(frm.doc.status,colors[frm.doc.status]||"blue")
+}
+if(frm.doc.status==="Scheduled" && frm.doc.session_date && frappe.datetime.compare_date(frm.doc.session_date,frappe.datetime.get_today())<=0){
+    frm.add_custom_button("Finalize Session",()=>{
+        frappe.msgprint("Your session has been finalized")
+    })
+}
+
+
+if(frm.doc.status=="Scheduled" && frm.doc.session_date<=today()){
+    frm.add_custom_button("Finalize Session",()=>{
+      frappe.msgprint("Your session has been finalized")
+    })
+}
 	}
-});
+}
+);

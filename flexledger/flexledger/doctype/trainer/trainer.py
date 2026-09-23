@@ -6,4 +6,6 @@ from frappe.model.document import Document
 
 
 class Trainer(Document):
-	pass
+	def rename_trainer(old,new):
+		frappe.rename_doc("Trainer",old,new,merge=False)
+	

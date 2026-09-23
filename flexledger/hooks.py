@@ -7,11 +7,16 @@ app_license = "mit"
 
 
 
-fixtures=["Role"]
-
+fixtures=[{
+    "dt":"Role","filters":[["name","in","FIT Trainer,FIT Front Desk,FIT Studio Manager"]]
+}]
+# ,{
+#     "dt":"Custom DocPerm","filters":["role","in",["FIT Trainer","FIT Front Desk","FIT Manager"]]}
 permission_query_conditions:{
     "Class Session":"flexledger.api.permissions.class_session_permission"
 }
+
+
 # Apps
 # ------------------
 

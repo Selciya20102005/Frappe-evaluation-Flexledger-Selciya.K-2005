@@ -22,13 +22,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "package_purchase",
-   "fieldtype": "Link",
-   "label": "Package Purchase",
-   "options": "Package Purchase",
-   "reqd": 1
-  },
-  {
    "fieldname": "credits_charged",
    "fieldtype": "Int",
    "label": "Credits Charged",
@@ -40,13 +33,21 @@
    "fieldtype": "Select",
    "label": "Attendance Status",
    "options": "Booked\nAttended\nNo-Show\nCancelled"
+  },
+  {
+   "fieldname": "package_purchase",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Package Purchase",
+   "options": "Package Purchase",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-09-22 15:57:12.838111",
+ "modified": "2026-09-23 14:18:51.341652",
  "modified_by": "Administrator",
  "module": "flexledger",
  "name": "Attendee Entry",
