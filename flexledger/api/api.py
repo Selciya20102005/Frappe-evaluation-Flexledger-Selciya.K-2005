@@ -9,6 +9,17 @@ def get_low_balance_members(threshold):
         )
     return result.run(as_dict=True)
 
+# @frappe.whitelist()
+def transfer_package(package_name,new_member):
+    try:
+        frappe.db.sql("""
+        UPDATE  tabPackage Purchase` SET member=%s WHERE name=%s""",(new_member,package_name))
+        frappe.db.commit()
+    except Exception:
+        frappe.db.rollback()
+        frappe.log_error(frappe.get_traceback(),"Package Transfer Failed")
+        raise
+
 
 
 

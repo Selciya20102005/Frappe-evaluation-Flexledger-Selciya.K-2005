@@ -9,5 +9,8 @@ class PackagePurchase(Document):
 	def autoname(self):
 		count=frappe.db.count("Package Purchase",{"member":self.member})
 		self.name=f"{self.member}-{count+1:04d}"
+
+	def before_print(self,print_settings=None):
+		self.print_summary=f"{self.member} - {self.total_credits} credits"
 	
 	

@@ -16,7 +16,19 @@ permission_query_conditions:{
     "Class Session":"flexledger.api.permissions.class_session_permission"
 }
 
+after_install="flexledger.api.install.after_install"
 
+doc_events = {
+    "*": {
+        "on_update": "flexledger.api.audit.log_change",
+        "on_submit": "flexledger.api.audit.log_change",
+        "on_cancel": "flexledger.api.audit.log_change",
+    }
+}
+
+jinja={
+    "methods":["flexledger.api.print_utils.get_studio_name","flexledger.api.print_utils.format_value"]
+}
 # Apps
 # ------------------
 
