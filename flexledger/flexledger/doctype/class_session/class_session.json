@@ -42,17 +42,17 @@
   },
   {
    "fieldname": "session_details_tab",
-   "fieldtype": "Tab Break",
+   "fieldtype": "Section Break",
    "label": "Session Details"
   },
   {
    "fieldname": "tab_2_tab",
-   "fieldtype": "Tab Break",
+   "fieldtype": "Section Break",
    "label": "Attendees"
   },
   {
    "fieldname": "tab_3_tab",
-   "fieldtype": "Tab Break",
+   "fieldtype": "Section Break",
    "label": "Status & Notes"
   },
   {
@@ -129,7 +129,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-24 16:48:46.011567",
+ "modified": "2026-09-25 18:26:56.435250",
  "modified_by": "Administrator",
  "module": "flexledger",
  "name": "Class Session",
@@ -156,6 +156,7 @@
   },
   {
    "read": 1,
+   "report": 1,
    "role": "FIT Trainer",
    "submit": 1,
    "write": 1

@@ -6,6 +6,10 @@ from frappe.model.document import Document
 
 
 class PackagePurchase(Document):
+
+	def before_insert(self):
+		self.credits_remaining=self.total_credits
+
 	def autoname(self):
 		count=frappe.db.count("Package Purchase",{"member":self.member})
 		self.name=f"{self.member}-{count+1:04d}"

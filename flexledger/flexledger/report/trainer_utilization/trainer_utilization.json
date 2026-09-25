@@ -8,26 +8,11 @@
  "docstatus": 0,
  "doctype": "Report",
  "doctype_to_sync": [],
- "filters": [
-  {
-   "fieldname": "session_date",
-   "fieldtype": "Datetime",
-   "label": "Session Date",
-   "mandatory": 0,
-   "wildcard_filter": 0
-  },
-  {
-   "fieldname": "trainer",
-   "fieldtype": "Check",
-   "label": "Trainer",
-   "mandatory": 0,
-   "wildcard_filter": 0
-  }
- ],
+ "filters": [],
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": null,
- "modified": "2026-09-24 16:18:00.832685",
+ "modified": "2026-09-25 10:52:11.528882",
  "modified_by": "Administrator",
  "module": "flexledger",
  "name": "Trainer Utilization",

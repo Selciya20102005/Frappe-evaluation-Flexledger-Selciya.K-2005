@@ -14,9 +14,15 @@ IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
 class IntegrationTestClassSession(IntegrationTestCase):
-	"""
-	Integration tests for ClassSession.
-	Use this class for testing interactions between multiple components.
-	"""
-
-	pass
+	def deduct_attendee_credits(self,attendee,studio_settings):
+			credits_charged=attendee.credits_charged or 0
+			if new_credits_remaining<=threshold:
+				frappe.log_error("credits remaing")
+				
+	
+				
+				frappe.enqueue("flexledger.api.send_mail.send_low_balance_email",
+				member=attendee.member,
+				package=attendee.package_purchase,
+				credits_remaining=new_credits_remaining,
+				queue="short")

@@ -10,7 +10,8 @@
   "document_name",
   "action",
   "user",
-  "timestamp"
+  "timestamp",
+  "date"
  ],
  "fields": [
   {
@@ -38,12 +39,17 @@
    "fieldname": "timestamp",
    "fieldtype": "Data",
    "label": "Timestamp"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-24 12:10:55.313106",
+ "modified": "2026-09-25 06:13:35.589801",
  "modified_by": "Administrator",
  "module": "flexledger",
  "name": "Audit Log",

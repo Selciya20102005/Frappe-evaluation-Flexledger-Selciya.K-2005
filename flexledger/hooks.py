@@ -12,7 +12,7 @@ fixtures=[{
 }]
 # ,{
 #     "dt":"Custom DocPerm","filters":["role","in",["FIT Trainer","FIT Front Desk","FIT Manager"]]}
-permission_query_conditions:{
+permission_query_conditions={
     "Class Session":"flexledger.api.permissions.class_session_permission"
 }
 
@@ -28,6 +28,10 @@ doc_events = {
 
 jinja={
     "methods":["flexledger.api.print_utils.get_studio_name","flexledger.api.print_utils.format_value"]
+}
+
+scheduler_events={
+    "daily":["flexledger.api.daily_package_expiry_check.check_expiring_packages"]
 }
 # Apps
 # ------------------

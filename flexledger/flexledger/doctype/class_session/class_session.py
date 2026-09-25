@@ -9,6 +9,7 @@ from frappe.utils import getdate,today
 class ClassSession(Document):
 
 	def validate(self):
+		
 		self.validate_session_date()
 		credits_required=self.get_required_credits()
 		for attendee in self.attendees:
@@ -120,6 +121,10 @@ class ClassSession(Document):
 
 		threshold=studio_settings.low_balance_alert_threshold or 0
 		if new_credits_remaining<=threshold:
+			frappe.log_error("credits remaing")
+			
+
+    		
 			frappe.enqueue("flexledger.api.send_mail.send_low_balance_email",
 			member=attendee.member,
 			package=attendee.package_purchase,
@@ -158,7 +163,8 @@ class ClassSession(Document):
 		if self.status not in ["Draft","Cancelled"]:
 			frappe.throw(f"Class session {self.name} cannot be deleted, only Draft or Cancelled sessions can be deleted")
 
-
+	# def on_update(self):
+	# 	self.save()
 
 					
 			
