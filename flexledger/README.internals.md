@@ -187,3 +187,9 @@ http://127.0.0.1:8000/api/resource/Member/MEM-2026-0000?autho
     "_server_messages": "[\"{\\\"message\\\":\\\"Member MEM-2026-0000 not found\\\",\\\"as_table\\\":false,\\\"title\\\":\\\"Message\\\",\\\"indicator\\\":\\\"red\\\",\\\"raise_exception\\\":1,\\\"__frappe_exc_id\\\":\\\"52345bc76650a25a200c8a6cb7ddd1eee2308caf12439a0ccef952d6\\\"}\"]"
 }
 
+
+
+Demo Video
+
+https://drive.google.com/file/d/1JQu-ELfnsR5aH2ksRAYpKArrWbZTlloi/view?usp=sharing
+
